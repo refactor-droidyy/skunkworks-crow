@@ -11,6 +11,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.preference.SwitchPreference;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -38,8 +39,8 @@ public class SettingsActivity extends PreferenceActivity {
     EditTextPreference hotspotNamePreference;
     EditTextPreference bluetoothNamePreference;
     Preference hotspotPasswordPreference;
-    CheckBoxPreference passwordRequirePreference;
-    CheckBoxPreference btSecureModePreference;
+    SwitchPreference passwordRequirePreference;
+    SwitchPreference btSecureModePreference;
     EditTextPreference odkDestinationDirPreference;
     ListPreference defaultMethodPreference;
     private SharedPreferences prefs;
@@ -71,8 +72,8 @@ public class SettingsActivity extends PreferenceActivity {
         hotspotNamePreference = (EditTextPreference) findPreference(PreferenceKeys.KEY_HOTSPOT_NAME);
         bluetoothNamePreference = (EditTextPreference) findPreference(PreferenceKeys.KEY_BLUETOOTH_NAME);
         hotspotPasswordPreference = findPreference(PreferenceKeys.KEY_HOTSPOT_PASSWORD);
-        passwordRequirePreference = (CheckBoxPreference) findPreference(PreferenceKeys.KEY_HOTSPOT_PWD_REQUIRE);
-        btSecureModePreference = (CheckBoxPreference) findPreference(PreferenceKeys.KEY_BLUETOOTH_SECURE_MODE);
+        passwordRequirePreference = (SwitchPreference) findPreference(PreferenceKeys.KEY_HOTSPOT_PWD_REQUIRE);
+        btSecureModePreference = (SwitchPreference) findPreference(PreferenceKeys.KEY_BLUETOOTH_SECURE_MODE);
         odkDestinationDirPreference = (EditTextPreference) findPreference(PreferenceKeys.KEY_ODK_DESTINATION_DIR);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
